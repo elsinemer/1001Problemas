@@ -1,0 +1,21 @@
+public class AdivinaNumero {
+    public static void main(String[] args) {
+        int numeroSecreto = 42; 
+
+        // Intentos del usuario 
+        int[] intentosUsuario = {30, 50, 45, 42};
+
+        for (int intento : intentosUsuario) {
+            System.out.println("Intento: " + intento);
+
+            if (intento < numeroSecreto) {
+                System.out.println("Demasiado bajo.");
+            } else if (intento > numeroSecreto) {
+                System.out.println("Demasiado alto.");
+            } else {
+                System.out.println("¡Correcto! Has adivinado el número.");
+                break;
+            }
+        }
+    }
+}
