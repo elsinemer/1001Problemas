@@ -1,0 +1,19 @@
+public class PotenciaCalculator {
+
+    public static void main(String[] args) {
+        // Datos de ejemplo
+        double base = 3;
+        double exponente = 4;
+
+        // Cálculo de la potencia usando Math.pow
+        double resultado = calcularPotencia(base, exponente);
+
+        // Mostrar el resultado
+        System.out.println(base + " elevado a la " + exponente + " es: " + resultado);
+    }
+
+    // Método que calcula la potencia 
+    public static double calcularPotencia(double base, double exponente) {
+        return Math.pow(base, exponente);
+    }
+}
