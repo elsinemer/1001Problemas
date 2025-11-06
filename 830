@@ -1,0 +1,41 @@
+public class ListaRecursiva {
+    // Clase interna Nodo
+    static class Nodo {
+        int dato;
+        Nodo siguiente;
+
+        Nodo(int dato) {
+            this.dato = dato;
+            this.siguiente = null;
+        }
+    }
+
+    // Método recursivo para obtener el valor en la posición n
+    public static int obtenerValor(Nodo cabeza, int n) {
+        // Caso base: si la lista está vacía
+        if (cabeza == null) {
+            throw new IndexOutOfBoundsException("La posición no existe en la lista.");
+        }
+
+        // Caso base: cuando n es 0, se devuelve el dato del nodo actual
+        if (n == 0) {
+            return cabeza.dato;
+        }
+
+        // Llamada recursiva avanzando al siguiente nodo
+        return obtenerValor(cabeza.siguiente, n - 1);
+    }
+
+    public static void main(String[] args) {
+        // Crear lista enlazada: 10 → 20 → 30 → 40
+        Nodo cabeza = new Nodo(10);
+        cabeza.siguiente = new Nodo(20);
+        cabeza.siguiente.siguiente = new Nodo(30);
+        cabeza.siguiente.siguiente.siguiente = new Nodo(40);
+
+        int posicion = 2; // Queremos el valor en la posición 2 (empezando desde 0)
+        int valor = obtenerValor(cabeza, posicion);
+
+        System.out.println("El valor en la posición " + posicion + " es: " + valor);
+    }
+}
