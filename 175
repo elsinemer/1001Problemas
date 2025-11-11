@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Armonico {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese un número: ");
+        int n = sc.nextInt();
+
+        if (esArmonico(n)) {
+            System.out.println(n + " es un número armónico.");
+        } else {
+            System.out.println(n + " NO es un número armónico.");
+        }
+    }
+
+    public static boolean esArmonico(int n) {
+        double suma = 0;
+
+        // recorrer divisores
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                suma += 1.0 / i;
+            }
+        }
+
+        // verificar si la suma es un entero
+        return suma == Math.floor(suma);
+    }
+}
